@@ -1,0 +1,18 @@
+/// Reading initials from names.
+public library initials {
+    /// The first letter of each word of a name, in capitals, with nothing
+    /// between them.
+    ///
+    /// ```jadpo
+    /// var letters: Letters = attempt initials.of("ada  lovelace")
+    /// assert letters == "AL"
+    /// assert initials.of("   ") fails NoName
+    /// ```
+    function of(name: FullName) fails NoName -> Letters {
+        var words: List<Text> = list.filter(text.split(text.trim(name), " "), word -> word != "")
+        var firsts: List<Text> = list.map(words, word -> text.upper(text.keep_first(word, 1)))
+        return attempt Letters(text.join(firsts, "")) {
+            invalid: NoName
+        }
+    }
+}

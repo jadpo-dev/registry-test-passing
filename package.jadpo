@@ -1,0 +1,6 @@
+/// Initials: the first letter of each word of a name, in capitals.
+package Initials.v1 {
+    publisher: "@jadpo-test"
+    licence: Licence.mit
+    jadpo: "0.3"
+}

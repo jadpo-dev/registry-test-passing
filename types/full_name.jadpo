@@ -1,0 +1,4 @@
+/// A name as someone typed it, one word or several.
+public type FullName = Text {
+    max_length: 200
+}

@@ -1,0 +1,4 @@
+/// The name had no words in it, only spaces or nothing at all.
+public type NoName = Failure {
+    kind: FailureKind.invalid_value
+}

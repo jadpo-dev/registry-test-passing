@@ -1,0 +1,9 @@
+test "every word gives one capital" {
+    var letters: Letters = attempt initials.of("Grace Brewster Murray Hopper")
+    assert letters == "GBMH"
+}
+
+test "one word gives one letter" {
+    var letters: Letters = attempt initials.of("cher")
+    assert letters == "C"
+}

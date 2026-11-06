@@ -1,0 +1,5 @@
+/// Initials in capitals, such as `AL` for Ada Lovelace.
+public type Letters = Text {
+    min_length: 1
+    max_length: 200
+}
