@@ -7,3 +7,8 @@ test "one word gives one letter" {
     var letters: Letters = attempt initials.of("cher")
     assert letters == "C"
 }
+
+test "dotted initials end each letter with a full stop" {
+    var letters: Letters = attempt initials.dotted("John Ronald Reuel Tolkien")
+    assert letters == "J.R.R.T."
+}

@@ -5,11 +5,17 @@ package Initials.v1
     /// Initials: the first letter of each word of a name, in capitals.
     file package.jadpo
     kind library
-    version 1.0.0
+    version 1.1.0
     publisher @jadpo-test
     licence mit
     jadpo 0.3
     guide GUIDE.md
+
+function initials.dotted
+    /// The first letter of each word of a name, in capitals, each followed by a full stop.
+    file libraries/initials.jadpo
+    signature (name: FullName) -> Letters
+    fails NoName
 
 function initials.of
     /// The first letter of each word of a name, in capitals, with nothing between them.

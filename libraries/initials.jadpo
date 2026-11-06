@@ -15,4 +15,20 @@ public library initials {
             invalid: NoName
         }
     }
+
+    /// The first letter of each word of a name, in capitals, each followed
+    /// by a full stop.
+    ///
+    /// ```jadpo
+    /// var letters: Letters = attempt initials.dotted("ada lovelace")
+    /// assert letters == "A.L."
+    /// assert initials.dotted("") fails NoName
+    /// ```
+    function dotted(name: FullName) fails NoName -> Letters {
+        var words: List<Text> = list.filter(text.split(text.trim(name), " "), word -> word != "")
+        var firsts: List<Text> = list.map(words, word -> text.upper(text.keep_first(word, 1)) + ".")
+        return attempt Letters(text.join(firsts, "")) {
+            invalid: NoName
+        }
+    }
 }
